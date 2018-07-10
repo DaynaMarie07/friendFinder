@@ -1,16 +1,11 @@
-//=========REQUIRE express and body parser ====//
-//======Series of npm packages=====//
 var express = require("express");
 var bodyParser = require("body-parser");
 var path = require("path");
-
-//======EXPRESS configuration======//
-
 var app = express();
 
-var PORT = process.env.PORT || 8889;
+var PORT = process.env.PORT || 8080;
 
-// Sets up the Express app to handle data parsing
+// Set up the Express app for data parsing
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true
@@ -20,13 +15,7 @@ app.use(bodyParser.json({
   type: "application/vnd.api+json"
 }));
 
-//===having issues requiring===//
-
-require("./friendfinder/app/routing/apiRoutes")(app);
-require("./friendfinder/app/routing/htmlRoutes")(app);
-
-
-//=======LISTENER=======//
+//listen to me!
 app.listen(PORT, function() {
     console.log("App listening on PORT: " + PORT);
   });

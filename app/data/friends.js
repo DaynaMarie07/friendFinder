@@ -1,4 +1,4 @@
-//data being stored on the server
+//data on server
 
 var friends = [
     {
